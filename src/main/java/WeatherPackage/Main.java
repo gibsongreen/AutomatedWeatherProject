@@ -1,32 +1,22 @@
-import org.openqa.selenium.edge.EdgeDriver;
+package WeatherPackage;
+
 import java.util.Date;
 import org.openqa.selenium.chrome.ChromeOptions;
 //package SeleniumBasicCommands;
-import org.openqa.selenium.*;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
-import java.util.List;
-import java.io.*;
-import java.util.concurrent.TimeUnit;
+
 import java.lang.Thread;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.io.FileHandler;
-import java.io.File;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.io.FileHandler;
-import java.io.File;
+
 import java.io.IOException;
 
 
 public class Main {
     public static void main(String[] args) throws InterruptedException, IOException {
         Date date = new Date();
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\gibso\\Downloads\\chromedriver_win32 (2)\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         ChromeDriver driver6 = new ChromeDriver(options);
@@ -40,35 +30,35 @@ public class Main {
             Thread.sleep(1000);
 
             // 1.  State Test
-            // FloridaDownload f_d = new FloridaDownload();
-            //f_d.State_Downloader_Img(driver6,"Florida");
+            FloridaDownload f_d = new FloridaDownload();
+            f_d.State_Downloader_Img(driver6,"Florida");
 
             // 2.  US Continent Test
-            //USDownload us_d = new USDownload();
+            //WeatherPackage.USDownload us_d = new WeatherPackage.USDownload();
             //us_d.Cont_US_Downloader_Img(driver6);
 
             // 3.  Lee Test
-            //LeeDownload lee_d = new LeeDownload();
+            //WeatherPackage.LeeDownload lee_d = new WeatherPackage.LeeDownload();
             //lee_d.GPS_Downloader_Img(driver6);
 
             // 4.  Florida Archive Year Selection Download
-            //FloridaArchiveDownload fl_a_d = new FloridaArchiveDownload();
+            //WeatherPackage.FloridaArchiveDownload fl_a_d = new WeatherPackage.FloridaArchiveDownload();
             //fl_a_d.Archvive_State_Downloader_Img(driver6,"Florida", date);
 
             // 5.  Forecast Radar Screenshot
-            //ForecastRadar fore_r = new ForecastRadar();
+            //WeatherPackage.ForecastRadar fore_r = new WeatherPackage.ForecastRadar();
             //fore_r.ForecastScreenshotGPS(driver6);
 
             // 6.  Forecast 2 weeks
-            //TwoWeekForecast two_week = new TwoWeekForecast();
+            //WeatherPackage.TwoWeekForecast two_week = new WeatherPackage.TwoWeekForecast();
             //two_week.ForecastScreenshotTwoWeek(driver6);
 
             // 7.  Archive Select by Time
-            //ArchiveSelectTime select_t = new ArchiveSelectTime();
+            //WeatherPackage.ArchiveSelectTime select_t = new WeatherPackage.ArchiveSelectTime();
             //select_t.SelectStartTime(driver6);
 
             // 8. Iterate Over State Download Archive
-            //IterateFloridaArchive florida_it = new IterateFloridaArchive();
+            //WeatherPackage.IterateFloridaArchive florida_it = new WeatherPackage.IterateFloridaArchive();
             //florida_it.IterateDownloadState(driver6);
 
         } catch (InterruptedException e) {

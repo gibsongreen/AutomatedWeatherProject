@@ -1,7 +1,29 @@
+package WeatherPackage;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import java.util.Date;
+public class ArchiveSelectTime {
 
-public class USDownload {
+    // minute must be even, 2minute interval
+    // error may arise, seconds sometimes in it, sometimes not
+    public void startTime(ChromeDriver driver6, int h, int m, String am_pm) {
+        //
+        String str_h = String.format("%02d", h);
+        String str_m = String.format("%02d", m);
+        String str_s = "00";
+        String W_us_time = str_h + ":" + str_m + ":" + str_s + am_pm;
+        System.out.println(W_us_time);
+        try {
+            // this is tonardo
+            Select drop_down = new Select(driver6.findElement(By.xpath("/html/body/div[1]/div/div[6]/div/div/div/div/div[1]/div[1]/div[1]/div[1]/div[2]/form/div[2]/div[1]/div[3]/div/div[2]/select")));
+            drop_down.selectByVisibleText(W_us_time);
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            System.out.println("Error: Time Selection...");
+        }
+    }
 
     public void navigateToRadar(ChromeDriver driver6) {
         // Radar Button Click
@@ -40,16 +62,20 @@ public class USDownload {
             System.out.println("Error: Downloading Radar...");
         }
     }
+
     // primary function of the class
-    public void Cont_US_Downloader_Img(ChromeDriver driver6) {
+    public void SelectStartTime(ChromeDriver driver6) {
         // navigate to the radar page
+
         navigateToRadar(driver6);
+        // Select the Starting Time
+        startTime(driver6, 1, 2, "am");
 
         // default radar is US Continent
         // Radar Button Click
         radarDownloadButton(driver6);
 
         // Download Image File Button Click
-       radarDownloader(driver6);
+        radarDownloader(driver6);
     }
 }
