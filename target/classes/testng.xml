@@ -1,0 +1,15 @@
+<suite name="WeatherTest" parallel="false" preserve-order="true">
+    <test name="FullTest" > <!-- required name for suite and test -->
+        <classes>
+            <class name="test.TestArchiveSelectTime"/>
+            <class name="test.TestFloridaArchiveDownload"/>
+            <class name="test.TestFloridaDownload"/>
+            <class name="test.TestForecastRadar"/>
+            <class name="test.TestIterateFloridaArchive"/>
+            <class name="test.TestLeeDownload"/>
+            <class name="test.TestTwoWeekForecast"/>
+            <class name="test.TestUSDownload"/>
+            <!--add more classes here -->
+        </classes>
+    </test>
+</suite>
