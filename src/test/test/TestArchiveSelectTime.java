@@ -19,7 +19,7 @@ public class TestArchiveSelectTime {
     ChromeDriver driver;
     ArchiveSelectTime testClient = new ArchiveSelectTime();
 
-    @Test
+    @BeforeTest
     void Setup() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();

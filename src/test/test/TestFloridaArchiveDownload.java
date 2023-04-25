@@ -15,7 +15,7 @@ public class TestFloridaArchiveDownload {
     ChromeDriver driver;
     FloridaArchiveDownload testClient = new FloridaArchiveDownload();
 
-    @Test
+    @BeforeTest
     void Setup() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();

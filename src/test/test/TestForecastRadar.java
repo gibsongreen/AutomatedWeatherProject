@@ -15,7 +15,7 @@ public class TestForecastRadar {
     ChromeDriver driver;
     ForecastRadar testClient = new ForecastRadar();
 
-    @Test
+    @BeforeTest
     void Setup() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();

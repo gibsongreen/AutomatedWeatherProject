@@ -15,7 +15,7 @@ public class TestUSDownload {
     ChromeDriver driver;
     USDownload testClient = new USDownload();
 
-    @Test
+    @BeforeTest
     void Setup() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();

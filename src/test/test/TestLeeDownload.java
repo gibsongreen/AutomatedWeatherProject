@@ -15,7 +15,7 @@ public class TestLeeDownload {
     ChromeDriver driver;
     LeeDownload testClient = new LeeDownload();
 
-    @Test
+    @BeforeTest
     void Setup() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();

@@ -15,7 +15,7 @@ public class TestTwoWeekForecast {
     ChromeDriver driver;
     TwoWeekForecast testClient = new TwoWeekForecast();
 
-    @Test
+    @BeforeTest
     void Setup() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();
