@@ -2,7 +2,10 @@ package test;
 import WeatherPackage.ArchiveSelectTime;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -39,11 +42,15 @@ public class TestArchiveSelectTime {
     @Test
     void TestNavigateToRadar(){
         testClient.navigateToRadar(driver);
+        Assert.assertEquals(driver.getCurrentUrl(), "https://weather.us/radar-us");
     }
 
     @Test
     void TestSelectStartTime(){
         testClient.startTime(driver, 1, 2, "am");
+        Select drop_down = new Select(driver.findElement(By.xpath("/html/body/div[1]/div/div[6]/div/div/div/div/div[1]/div[1]/div[1]/div[1]/div[2]/form/div[2]/div[1]/div[3]/div/div[2]/select")));
+        WebElement option = drop_down.getFirstSelectedOption();
+        Assert.assertEquals(option.getText(), "01:02:00am");
     }
 
     @Test

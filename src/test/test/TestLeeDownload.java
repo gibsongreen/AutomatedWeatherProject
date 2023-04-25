@@ -3,6 +3,7 @@ package test;
 import WeatherPackage.LeeDownload;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -36,6 +37,7 @@ public class TestLeeDownload {
     @Test
     void TestNavigateToRadar(){
         testClient.navigateToRadar(driver);
+        Assert.assertEquals(driver.getCurrentUrl(), "https://weather.us/radar-us");
     }
     @Test
     void TestGpsSelector(){

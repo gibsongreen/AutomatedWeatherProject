@@ -3,6 +3,7 @@ package test;
 import WeatherPackage.TwoWeekForecast;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -35,6 +36,7 @@ public class TestTwoWeekForecast {
     @Test
     void TestNavigateToForecast(){
         testClient.navigateToForecast(driver);
+        Assert.assertEquals(driver.getCurrentUrl(), "https://weather.us/weather");
     }
     @Test
     void TestClickGPSLocator(){
