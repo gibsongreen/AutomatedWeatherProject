@@ -3,6 +3,7 @@ package test;
 import WeatherPackage.USDownload;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -14,7 +15,7 @@ public class TestUSDownload {
     ChromeDriver driver;
     USDownload testClient = new USDownload();
 
-    @Test
+    @BeforeTest
     void Setup() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();
@@ -36,6 +37,7 @@ public class TestUSDownload {
     @Test
     void TestNavigateToRadar(){
         testClient.navigateToRadar(driver);
+        Assert.assertEquals(driver.getCurrentUrl(), "https://weather.us/radar-us");
     }
     @Test
     void TestRadarDownloadButton(){

@@ -30,8 +30,8 @@ public class Main {
             Thread.sleep(1000);
 
             // 1.  State Test
-            FloridaDownload f_d = new FloridaDownload();
-            f_d.State_Downloader_Img(driver6,"Florida");
+            //FloridaDownload f_d = new FloridaDownload();
+            //f_d.State_Downloader_Img(driver6,"Florida");
 
             // 2.  US Continent Test
             //WeatherPackage.USDownload us_d = new WeatherPackage.USDownload();
@@ -46,8 +46,8 @@ public class Main {
             //fl_a_d.Archvive_State_Downloader_Img(driver6,"Florida", date);
 
             // 5.  Forecast Radar Screenshot
-            //WeatherPackage.ForecastRadar fore_r = new WeatherPackage.ForecastRadar();
-            //fore_r.ForecastScreenshotGPS(driver6);
+            WeatherPackage.ForecastRadar fore_r = new WeatherPackage.ForecastRadar();
+            fore_r.ForecastScreenshotGPS(driver6);
 
             // 6.  Forecast 2 weeks
             //WeatherPackage.TwoWeekForecast two_week = new WeatherPackage.TwoWeekForecast();

@@ -14,7 +14,7 @@ public class TestIterateFloridaArchive {
     ChromeDriver driver;
     IterateFloridaArchive testClient = new IterateFloridaArchive();
 
-    @Test
+    @BeforeTest
     void Setup() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "C:\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();
